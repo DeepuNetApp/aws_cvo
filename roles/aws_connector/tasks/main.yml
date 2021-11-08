@@ -1,0 +1,15 @@
+##Role for crating NetApp cloud manager connector for AWS. 
+##This role uses ansbile vault for secret informations ex: "refresh_token" and host vars for passing the variables
+- name: Create NetApp Cloud Manager connector for AWS
+  netapp.cloudmanager.na_cloudmanager_connector_aws:
+    state: present
+    refresh_token: "{{ refresh_token }}"
+    name: "{{ name }}"
+    region: "{{ region }}"
+    key_name: "{{ key_name }}"
+    subnet_id: "{{ subnet_id }}"
+    security_group_ids: "{{ security_group_ids }}"
+    iam_instance_profile_name: "{{ iam_instance_profile_name }}"
+    account_id: "{{ account_id }}"
+    company: NetApp
+    aws_tag: "{{ aws_tag }}"

@@ -1,0 +1,22 @@
+##Role for crating single node CVO. 
+##This role uses ansbile vault for secret informations ex: "refresh_token"," and host vars for passing the variables
+- name: Create NetApp Cloud Manager CVO for AWS single
+  netapp.cloudmanager.na_cloudmanager_cvo_aws:
+    state: present
+    refresh_token: "{{ refresh_token }}"
+    workspace_id: "{{ workspace_id }}"
+    name: "{{ name }}"
+    region: "{{ region }}"
+    subnet_id: "{{ subnet_id }}"
+    vpc_id: "{{ vpc_id }}"
+    security_group_id: "{{ security_group_id }}"
+    svm_password: "{{ svm_password }}"
+    client_id: "{{ connector_id }}"
+    writing_speed_state: NORMAL
+    license_type: "{{ license_type }}"
+    use_latest_version: yes
+    #    ontap_version: "{{ ontap_version }}"
+    instance_type: "{{ instance_type }}"
+    aws_tag: [
+        {tag_key: creator,
+        tag_value: DeepuJ_PCS}]

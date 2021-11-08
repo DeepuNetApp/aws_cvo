@@ -1,0 +1,9 @@
+- name: Run aws configure
+  expect:
+    command: aws configure
+    responses:
+      AWS Access Key ID: "{{ aws_access_key }}"
+      AWS Secret Access Key: "{{ aws_secret_key }}"
+      Default region name: "{{ region }}"
+      Default output format: ""
+  no_log: true
