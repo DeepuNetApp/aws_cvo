@@ -1,0 +1,19 @@
+---
+# Host-specific variables for aws_ansible_connector
+# Deployed on 04 October 2021
+#Name for the connector
+name: aws_ansible_connector
+# Region where the connector needs to be deployed
+region: us-east-1
+# Name of the key pair in AWS to be used
+key_name: mykp
+#AWS Network subnet ID for the connector 
+subnet_id: subnet-xxxxxxxxxxxxxxxxxx
+#AWS Security group's to be attached to the connector
+security_group_ids: [sg-xxxxxxxxxxxxxxxxxxx]
+#AWS Role profile name to be attached to the connector
+iam_instance_profile_name: aws-connector-role
+#AWS tags to be used for the connector
+aws_tag: [
+     {tag_key: creator,
+     tag_value: DeepuJ_PCS}]

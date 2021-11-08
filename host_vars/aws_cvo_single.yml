@@ -1,0 +1,26 @@
+# Host-specific variables for aws_cvo_single
+# Deployed on 04 October 2021
+#Name for the cvo
+name: aws_cvo_single
+# Region where the connector needs to be deployed
+region: us-east-1
+# AWS VPC to hot this CVO WE
+vpc_id: vpc-xxxxxxxxxxxxxxxxxxx
+#AWS Network subnet ID for the connector 
+subnet_id: subnet-xxxxxxxxxxxxxxxxxxx
+#AWS Security group's to be attached to the connector
+security_group_id: sg-xxxxxxxxxxxxxxxxxxxx
+#Cloud manager connector ID
+connector_id: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#Cloud manager workspace ID
+workspace_id: workspace-xxxxxxxxxxx
+#License type to be used on this CVO
+license_type: cot-explore-paygo
+#Version of the ONTAP for this CVO
+#ontap_version: 9.9.1P3
+#Instance type for CVO
+instance_type: m5.xlarge
+#AWS tags to be used for the connector
+aws_tag: [
+     {tag_key: creator,
+     tag_value: DeepuJ_PCS}]
