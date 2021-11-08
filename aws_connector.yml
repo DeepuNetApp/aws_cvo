@@ -1,0 +1,21 @@
+- hosts: localhost
+  become: yes
+  become_method: sudo
+
+  vars_prompt:
+    - name: "name"
+      prompt: "Enter the connector name"
+      private: no
+
+    - name: "account_id"
+      prompt: "Enter the Cloud Manager account ID"
+      private: no
+    
+
+  vars_files:
+    - /home/deepu/ansible/host_vars/{{ name }}.yml
+
+  roles:
+    - aws_configure       
+    - aws_connector
+

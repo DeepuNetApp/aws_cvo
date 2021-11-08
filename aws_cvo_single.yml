@@ -1,0 +1,18 @@
+# This plabook uses host_vars and ansible vault!
+- hosts: localhost
+  become: yes
+  become_method: sudo
+
+  vars_prompt:
+    - name: "name"
+      prompt: "Enter the new CVO name"
+      private: no
+    - name: "svm_password"
+      prompt: "Enter the new CVO admin password"
+      private: yes
+  vars_files:
+    - /home/deepu/ansible/host_vars/{{ name }}.yml
+
+  roles:
+    - aws_configure
+    - aws_cvo_single
