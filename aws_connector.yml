@@ -13,7 +13,7 @@
     
 
   vars_files:
-    - /home/deepu/ansible/host_vars/{{ name }}.yml
+    - host_vars/{{ name }}.yml
 
   roles:
     - aws_configure       
