@@ -2,20 +2,14 @@
   become: yes
   become_method: sudo
 
-  vars_prompt:
-    - name: "name"
-      prompt: "Enter the connector name"
-      private: no
-
-    - name: "account_id"
-      prompt: "Enter the Cloud Manager account ID"
-      private: no
-    
+  vars:
+    - name: aws_ansible_connector   # Enter the name of the connector, host_vars file name should match the name
 
   vars_files:
     - host_vars/{{ name }}.yml
 
   roles:
-    - aws_configure       
+    - aws_configure
+    - aws_instanceprofile      
     - aws_connector
 

@@ -3,13 +3,9 @@
   become: yes
   become_method: sudo
 
-  vars_prompt:
-    - name: "name"
-      prompt: "Enter the new CVO name"
-      private: no
-    - name: "svm_password"
-      prompt: "Enter the new CVO admin password"
-      private: yes
+  vars:
+    - name: aws_cvo_single #Please edit the name of the new CVO you want to create, host var file should match the name
+  
   vars_files:
     - host_vars/{{ name }}.yml
 
