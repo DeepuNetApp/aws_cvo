@@ -13,6 +13,8 @@ subnet_id: subnet-xxxxxxxxxxxxxxxxxx
 security_group_ids: [sg-xxxxxxxxxxxxxxxxxxx]
 #AWS Role profile name to be attached to the connector
 iam_instance_profile_name: aws-connector-role
+#Account ID for the user in Cloud manager
+account_id: account-xxxxxxxx 
 #AWS tags to be used for the connector
 aws_tag: [
      {tag_key: creator,

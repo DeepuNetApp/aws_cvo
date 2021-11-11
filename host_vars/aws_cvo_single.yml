@@ -6,7 +6,7 @@ name: aws_cvo_single
 region: us-east-1
 # AWS VPC to hot this CVO WE
 vpc_id: vpc-xxxxxxxxxxxxxxxxxxx
-#AWS Network subnet ID for the connector 
+#AWS Network subnet ID for the CVO
 subnet_id: subnet-xxxxxxxxxxxxxxxxxxx
 #AWS Security group's to be attached to the connector
 security_group_id: sg-xxxxxxxxxxxxxxxxxxxx
