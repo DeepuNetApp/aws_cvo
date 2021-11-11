@@ -17,6 +17,4 @@
     use_latest_version: yes
     #    ontap_version: "{{ ontap_version }}"
     instance_type: "{{ instance_type }}"
-    aws_tag: [
-        {tag_key: creator,
-        tag_value: DeepuJ_PCS}]
+    aws_tag: "{{ aws_tag }}"
