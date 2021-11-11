@@ -1,0 +1,18 @@
+#This  role creates an instance profile, please keep the managed_policy.json.j2 file upto date
+#as per the requirements in NetApp docs
+# https://docs.netapp.coim/us-en/occm/task_creating_connectors_aws.html#creating-a-connector-in-aws
+
+# Create Policy ex nihilo
+- name: Create IAM Managed Policy
+  community.aws.iam_managed_policy:
+    policy_name: aws-connector-policy
+    policy_description: "Cloud manager connector managed policy"
+    policy: "{{ lookup('template', 'managed_policy.json.j2') }}"
+    state: present
+
+- name: "Create a role and attach a managed policy called 'aws-connector-policy'"
+  iam_role:
+    name: aws-connector-role
+    assume_role_policy_document: "{{ lookup('file','policy.json') }}"
+    managed_policy:
+      - arn:aws:iam::{{ aws_account_id }}:policy/aws-connector-policy
